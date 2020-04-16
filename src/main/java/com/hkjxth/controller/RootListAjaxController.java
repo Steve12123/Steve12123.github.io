@@ -10,10 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/rootajaxcontroller")
@@ -238,10 +235,17 @@ public class RootListAjaxController {
     public JsonResult selectRecords(@RequestParam(name = "selectTitle",defaultValue = "")String selectTitle,
                                     @RequestParam(name = "selectId",defaultValue = "") Integer selectId,
                                     @RequestParam(name = "selectDate",defaultValue = "") String selectDate) {
-        System.out.println(selectTitle);
-        System.out.println(selectId);
-        System.out.println(selectDate);
-        return JsonResult.success().add("message","success");
+        System.out.println("title:"+selectTitle);
+        System.out.println("selectId = " + selectId);
+        System.out.println("selectDate = " + selectDate);
+        List<Message> set=rootDao.selectMessageWithCondition(selectTitle,selectId,selectDate);
+        System.out.println("set = " + set);
+        if (set!=null){
+            return JsonResult.success().add("messageList",set);
+        }else{
+            return JsonResult.success().add("message","fail");
+        }
+
 
     }
 
