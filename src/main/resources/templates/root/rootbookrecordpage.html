@@ -116,6 +116,7 @@
         if (!choose_form.selectTitle&&!choose_form.selectId&&!choose_form.selectDate){
             alert("查询内容不能为空！");
             return false;
+
         } else{
             $.ajax({
                 url:"/rootajaxcontroller/selectRecords",
