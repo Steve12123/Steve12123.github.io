@@ -261,8 +261,8 @@ public class RootDaoImpl implements RootDao{
     }
 
     @Override
-    public void sendMessage(Integer userId, String title, String date, String body) {
-        jdbcTemplate.update("insert into message values(default,?,?,?,?)",new Object[]{userId,title,date,body});
+    public void sendMessage(Integer userId, String title, String date, String datebaseTime, String body) {
+        jdbcTemplate.update("insert into message values(default,?,?,?,?,?)",new Object[]{userId,title,date,datebaseTime,body});
     }
 
 

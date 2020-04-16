@@ -51,5 +51,5 @@ public interface RootDao {
     List<UserBookList> getLeavingTimeList();
 
 
-    void sendMessage(Integer userId, String title, String date, String body);
+    void sendMessage(Integer userId, String title, String date, String datebaseTime, String body);
 }

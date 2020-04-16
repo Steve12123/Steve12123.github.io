@@ -230,7 +230,7 @@ public class RootListAjaxController {
 
     @RequestMapping("/sendMessage")
     public JsonResult sendMessage(@RequestParam("userId")Integer userId,@RequestParam("bookId")Integer bookId){
-        rootDao.sendMessage(userId,"逾期通知",UtilClass.getDateToDatabase(),"书籍编号为"+bookId+"的书籍已逾期，请尽快还书！");
+        rootDao.sendMessage(userId,"逾期通知",UtilClass.getDateToDatabase(),UtilClass.getDate(),"书籍编号为"+bookId+"的书籍已逾期，请尽快还书！");
         return JsonResult.success().add("message","success");
     }
 
