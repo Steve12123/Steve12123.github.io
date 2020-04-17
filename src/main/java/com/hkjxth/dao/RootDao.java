@@ -51,7 +51,6 @@ public interface RootDao {
 
     List<UserBookList> getLeavingTimeList();
 
-
     void sendMessage(Integer userId, String title, String date, String datebaseTime, String body);
 
     List<Message> selectMessageWithCondition(String selectTitle, Integer selectId, String selectDate);
