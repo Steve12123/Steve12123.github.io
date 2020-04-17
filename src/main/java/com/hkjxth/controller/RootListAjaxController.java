@@ -235,13 +235,9 @@ public class RootListAjaxController {
     public JsonResult selectRecords(@RequestParam(name = "selectTitle",defaultValue = "")String selectTitle,
                                     @RequestParam(name = "selectId",defaultValue = "") Integer selectId,
                                     @RequestParam(name = "selectDate",defaultValue = "") String selectDate) {
-        System.out.println("title:"+selectTitle);
-        System.out.println("selectId = " + selectId);
-        System.out.println("selectDate = " + selectDate);
-        List<Message> set=rootDao.selectMessageWithCondition(selectTitle,selectId,selectDate);
-        System.out.println("set = " + set);
-        if (set!=null){
-            return JsonResult.success().add("messageList",set);
+        List<Message> list=rootDao.selectMessageWithCondition(selectTitle,selectId,selectDate);
+        if (list!=null){
+            return JsonResult.success().add("messageList",list);
         }else{
             return JsonResult.success().add("message","fail");
         }
