@@ -1,10 +1,9 @@
-package com.hkjxth.dao;
+﻿package com.hkjxth.dao;
 
 import com.hkjxth.bean.*;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 public interface RootDao {
 
@@ -56,4 +55,5 @@ public interface RootDao {
     List<Message> selectMessageWithCondition(String selectTitle, Integer selectId, String selectDate);
 
     List<User> getAllUser(Integer pageNum);
+
 }
