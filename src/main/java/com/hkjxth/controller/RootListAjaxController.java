@@ -1,4 +1,4 @@
-package com.hkjxth.controller;
+﻿package com.hkjxth.controller;
 
 import com.hkjxth.bean.*;
 import com.hkjxth.dao.RootDao;
@@ -10,7 +10,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/rootajaxcontroller")
@@ -247,6 +250,12 @@ public class RootListAjaxController {
     private static Integer THISPAGENUMTOUSER=1;
     /*user列表最大页变量*/
     private static Integer THISLASTPAGENUM;
+
+        System.out.println(selectTitle);
+        System.out.println(selectId);
+        System.out.println(selectDate);
+        return JsonResult.success().add("message","success");
+
 
     @RequestMapping("/getAllUser")
     public JsonResult getAllUser(@RequestParam(name = "pageNum", defaultValue = "1")Integer pageNum){

@@ -1,4 +1,4 @@
-package com.hkjxth.dao;
+﻿package com.hkjxth.dao;
 
 import com.hkjxth.bean.*;
 
@@ -55,4 +55,5 @@ public interface RootDao {
     List<Message> selectMessageWithCondition(String selectTitle, Integer selectId, String selectDate);
 
     List<User> getAllUser(Integer pageNum);
+
 }
