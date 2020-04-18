@@ -54,4 +54,6 @@ public interface RootDao {
     void sendMessage(Integer userId, String title, String date, String datebaseTime, String body);
 
     List<Message> selectMessageWithCondition(String selectTitle, Integer selectId, String selectDate);
+
+    List<User> getAllUser(Integer pageNum);
 }
